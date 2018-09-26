@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+#header {
+    #menu-area {
+        overflow-y: auto;
+        display: none;
+        opacity: 0;
+        transform: opacity 0.8s ease-in;
+        background-color: scale-color(get-color(bg), $lightness: 6%);
+        padding: rem-calc(10) rem-calc(20);
+        @include breakpoint(medium up) {
+            padding: rem-calc(60);
+        }
+
+        .menu {
+            margin-bottom: rem-calc(30);
+            .menu-item {
+                width: 100%;
+                padding: rem-calc(10) rem-calc(16);
+                text-align: center;
+                font-size: rem-calc(26);
+                @include breakpoint(medium up) {
+                    width: 50%;
+                    max-width: 300px;
+                    text-align: left;
+                }
+
+                &:hover a {
+                    color: #ffffff;
+                }
+            }
+            @include breakpoint(medium up) {
+                max-width: 600px;
+            }
+        }
+    }
+
+    &.active #menu-area {
+        position: fixed;
+        display: block;
+        opacity: 1;
+        height: 100%;
+        width: 100%;
+        z-index: 9999;
+        @include breakpoint(medium up) {
+            margin-left: rem-calc(80);
+        }
+    }
+}
+
+
+#navigation {
+    #burger {
+        .menu-icon {
+            @include burger(25px, 2px, 5px, #fff);
+        }
+    }
+
+    &.active #burger {
+        .menu-icon {
+            @include burger-to-cross;
+        }
+    }
+}

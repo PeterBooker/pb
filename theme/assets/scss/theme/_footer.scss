@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+    background-color: get-color(grey);
+    color: scale-color(get-color(grey), $lightness: 40%);
+    padding: rem-calc(30) rem-calc(20);
+    text-align: center;
+    @include breakpoint(medium up) {
+        text-align: center;
+    }
+
+    a {
+        color: #ffffff;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}

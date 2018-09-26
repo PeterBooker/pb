@@ -1,0 +1,24 @@
+{
+  "name": "pb",
+  "version": "1.0.0",
+  "description": "Personal Website for Peter Booker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Booker",
+  "license": "MIT",
+  "devDependencies": {
+    "event-stream": "^4.0.0",
+    "foundation-sites": "^6.5.0-rc.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-copy": "^4.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-header": "^2.0.5",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "sass-burger": "^1.3.1"
+  }
+}

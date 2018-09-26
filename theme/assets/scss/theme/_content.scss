@@ -1,0 +1,106 @@
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+#content {
+    background-color: #ffffff;
+    .title-panel {
+        position: relative;
+        padding: rem-calc(20) rem-calc(20) rem-calc(80) rem-calc(20);
+        background-color: get-color(red-dark);
+        color: #ffffff;
+
+        @include breakpoint(medium up) {
+            padding: rem-calc(40) rem-calc(40) rem-calc(100) rem-calc(40);
+        }
+
+        @include breakpoint(large up) {
+            padding: rem-calc(40) rem-calc(75) rem-calc(100) rem-calc(75);
+        }
+
+        .title {
+            color: #ffffff;
+        }
+        .sub-title {
+            opacity: 0.7;
+        }
+        
+        &:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 30vw 50px 70vw;
+            border-color: transparent transparent #ffffff transparent;
+        }
+        
+    }
+    .panel {
+        @include xy-grid( 'horizontal', true );
+        padding: rem-calc(20) rem-calc(20);
+        background-color: #ffffff;
+        flex-direction: column-reverse;
+
+        &:nth-child(odd) {
+            background-color: #f2f1f0;
+        }
+        &.gray {
+            background-color: #f2f1f0;
+        }
+        &.white {
+            background-color: #ffffff;
+        }
+        @include breakpoint(medium up) {
+            padding: rem-calc(30) rem-calc(40); 
+            flex-direction: row;
+        }
+        @include breakpoint(large up) {
+            padding: rem-calc(30) rem-calc(60);
+        }
+
+        .container {
+            @include xy-grid-container( $grid-container, 0 );
+        }
+        .row {
+            @include xy-grid( 'horizontal', true );
+        }
+
+        .full {
+            @include xy-cell( 100%, false );
+
+            @include breakpoint(large up) {
+                @include xy-cell( 100% );
+            }
+        }
+        .main {
+            @include xy-cell( 100%, false );
+
+            @include breakpoint(large up) {
+                @include xy-cell( 60% );
+            }
+        }
+        .sub {
+            @include xy-cell( 100%, false );
+            margin-bottom: rem-calc(20);
+            display: none;
+
+            @include breakpoint(large up) {
+                @include xy-cell( 40% );
+                margin-bottom: 0;
+                display: block;
+            }
+        }
+    }
+
+    article {
+        //@include xy-grid-container();
+    }    
+}
+
+.icon {
+    height: 1em;
+    width: auto;
+}

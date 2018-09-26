@@ -1,0 +1,104 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#header {
+    overflow: hidden;
+    .bar {
+        background: get-color(bg);
+        overflow: hidden;
+        height: rem-calc(70);
+
+        .logo {
+            float: left;
+            font-size: rem-calc(30);
+            padding: rem-calc(11) rem-calc(20);
+            color: #fff;
+            transition: color 0.3s ease-in;
+
+            &:hover {
+                color: scale-color(#fff, $lightness: -20%);
+            }
+
+            @include breakpoint(medium up) {
+                float: none;
+            }
+        }
+        #burger {
+            float: right;
+            cursor: pointer;
+            padding: rem-calc(20);
+            .burger-icon {
+                @include burger(45px, 6px, 5px, get-color(red));
+            }
+            @include breakpoint(medium up) {
+                position: relative;
+                padding: rem-calc(17);
+                height: 100%;
+                float: none;
+                .burger-icon {
+                    position: absolute;
+                    top: 50%;
+                }
+            }
+        }
+    }
+
+    &.active .bar #burger {
+        .burger-icon {
+            @include burger-to-cross;
+        }
+    }
+
+    #menu-area {
+        color: #ffffff;
+        overflow-x: auto;
+
+        .social-highlight {
+            max-width: 600px;
+            margin-bottom: rem-calc(30);
+
+            h5 {
+                text-align: center;
+                @include breakpoint(medium up) {
+                    text-align: left;
+                }
+            }
+            .menu li {
+                width: 20%;
+                text-align: center;
+            }
+            .icon {
+                fill: #ffffff;
+                height: 2em;
+                transition: fill 0.3s ease-in-out;
+                &:hover {
+                    fill: scale-color(#fff, $lightness: -40%);
+                }
+            }
+        }
+        .project-highlight {
+            display: none;
+            @include breakpoint(medium up) {
+                display: block;
+                max-width: 600px;
+                margin-bottom: rem-calc(30);
+            }
+            
+        }
+    }
+}
+
+@include breakpoint(medium up) {
+	#header {
+        .bar {
+            position: fixed;
+            width: 80px;
+            height: 100%;
+        }
+    }
+    #content,
+    #footer {
+        margin-left: rem-calc(80);
+    }
+}
