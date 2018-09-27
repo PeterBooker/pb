@@ -26,6 +26,11 @@
                     text-align: left;
                 }
 
+                &.current-menu-item a,
+                &.current_page_item a {
+                    color: #ffffff;
+                }
+
                 &:hover a {
                     color: #ffffff;
                 }
