@@ -16,9 +16,6 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<?php the_title( '<h2 class="title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-						<div class="entry-meta">
-							<?php pb_posted_on(); ?>
-						</div><!-- .entry-meta -->
 						<?php if ( has_post_thumbnail() ) : ?>
 						<div class="thumbnail">
 							<?php pb_post_thumbnail(); ?>
