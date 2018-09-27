@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name="theme-color" content="#C3073F">
 
 	<?php wp_head(); ?>
 </head>
@@ -25,8 +26,11 @@
 
 	<header id="header">
 		<div class="bar">
-			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Peter Booker">PB</a>
-
+			<canvas id="bar-bg"></canvas>
+			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Peter Booker">
+				<span class="p">P</span>
+				<span class="b">B</span>
+			</a>
 			<div id="burger" class="bar-icon" data-toggle="primary-menu">
 				<button class="burger-icon" type="button" aria-controls="primary-menu" aria-expanded="false"></button>
 			</div>
