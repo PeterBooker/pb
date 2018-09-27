@@ -13,11 +13,9 @@
 
 	<footer id="footer">
 		<div class="site-info">
-			&copy; 2018 Peter Booker
+			&copy; 2018 <a href="https://www.peterbooker.com/">Peter Booker</a>
 			<span class="sep"> | </span>
 			Powered by <a href="https://wordpress.org/">WordPress</a>
-			<span class="sep"> | </span>
-			Stuff
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
