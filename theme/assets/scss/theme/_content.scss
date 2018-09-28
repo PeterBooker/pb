@@ -64,67 +64,34 @@
             padding: 0;
         }
         &.blocks {
-            @include xy-grid-layout(2, '.block', false, 0, margin, right left);
+            @include xy-grid-layout(1, '.block', false, 0, margin, right left);
             flex-direction: row;
 
             @include breakpoint(medium up) {
-                @include xy-grid-layout(3, '.block', false, 0, margin, right left);
+                @include xy-grid-layout(2, '.block', false, 0, margin, right left);
             }
             @include breakpoint(large up) {
+                @include xy-grid-layout(3, '.block', false, 0, margin, right left);
+            }
+            @include breakpoint(xlarge up) {
                 @include xy-grid-layout(6, '.block', false, 0, margin, right left);
             }
-
-            &:nth-child(odd) {
-                background-color: get-color(red-dark);
-            }
             .block {
-                background-color: get-color(red);
-                padding: rem-calc(10);
-
+                background-color: #ffffff;
+                padding: rem-calc(20);
+                h4,
+                p {
+                    text-align: center;
+                }
                 h4 {
-                    color: #ffffff;
+                    margin-bottom: rem-calc(20);
                 }
                 p {
-                    color: #ffffff;
-                    font-size: rem-calc(18);
-                }
-                &:nth-child(1n) {
-                    background-color: scale-color(get-color(red), $lightness: 20%);
-                }
-                &:nth-child(2n) {
-                    background-color: scale-color(get-color(red-dark), $lightness: 20%);
-                }
-                &:nth-child(3n) {
-                    background-color: get-color(red-dark);
-                }
-                &:nth-child(4n) {
-                    background-color: get-color(red);
-                }
-                &:nth-child(5n) {
-                    background-color: scale-color(get-color(red), $lightness: -20%);
-                }
-                &:nth-child(6n) {
-                    background-color: scale-color(get-color(red-dark), $lightness: -20%);
+                    margin: 0;
                 }
 
-                &:nth-child(1n) {
-                    background-color: scale-color(get-color(red), $lightness: 20%);
-                }
-                &:nth-child(2n) {
-                    background-color: get-color(red);
-                }
-                &:nth-child(3n) {
-                    background-color: scale-color(get-color(red), $lightness: -20%);
-                }
-                &:nth-child(4n) {
-                    background-color: scale-color(get-color(red-dark), $lightness: 20%);
-                    
-                }
-                &:nth-child(5n) {
-                    background-color: get-color(red-dark);
-                }
-                &:nth-child(6n) {
-                    background-color: scale-color(get-color(red-dark), $lightness: -20%);
+                &:nth-child(odd) {
+                    background-color: #f2f1f0;
                 }
             }
         }

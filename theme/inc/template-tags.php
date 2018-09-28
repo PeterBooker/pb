@@ -127,10 +127,7 @@ endif;
 
 if ( ! function_exists( 'pb_recent_posts' ) ) :
 	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
+	 * Displays recent posts.
 	 */
 	function pb_recent_posts() {
 		$args = array(
@@ -170,5 +167,59 @@ if ( ! function_exists( 'pb_recent_posts' ) ) :
 
 			<?php
 		}
+	}
+endif;
+
+if ( ! function_exists( 'pb_blocks' ) ) :
+	/**
+	 * Displays recent posts.
+	 */
+	function pb_blocks() {
+		$blocks = array(
+			array(
+				'title' => 'WPDirectory',
+				'url'   => 'https://github.com/wpdirectory/wpdir',
+				'text'  => 'Regex search of all WordPress Plugin and Theme code.',
+			),
+			array(
+				'title' => 'Summit',
+				'url'   => 'https://github.com/PeterBooker/summit',
+				'text'  => 'Electron starter kit built on React and Go.',
+			),
+			array(
+				'title' => 'Factorigo',
+				'url'   => 'https://github.com/PeterBooker/factorigo',
+				'text'  => 'Tech demo of building the game Factorio in Go.',
+			),
+			array(
+				'title' => 'Foundation Utils',
+				'url'   => 'https://github.com/PeterBooker/wp-foundation-utils',
+				'text'  => 'Collection of Foundation framework helpers for WordPress.',
+			),
+			array(
+				'title' => 'PromPress',
+				'url'   => 'https://github.com/PeterBooker/wp-prompress',
+				'text'  => 'Metrics (Prometheus) client for WordPress.',
+			),
+			array(
+				'title' => 'WPDev',
+				'url'   => 'https://github.com/PeterBooker/wpdev',
+				'text'  => 'Docker Compose based development environment for WordPress.',
+			),
+		);
+		?>
+		<div class="panel collapse blocks">
+			<?php
+			foreach ( $blocks as $block ) {
+				?>
+				<div class="block">
+					<h4><a href="<?php echo esc_url( $block['url'] ); ?>"><?php echo esc_html( $block['title'] ); ?></a></h4>
+					<p><?php echo esc_html( $block['text'] ); ?></p>
+				</div>
+				<?php
+			}
+			?>
+		</div>
+		<?php
 	}
 endif;

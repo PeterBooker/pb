@@ -1906,47 +1906,28 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
           -ms-flex-direction: row;
               flex-direction: row; }
       #content .panel.blocks > .block {
-        width: 50%; }
+        width: 100%; }
       @media screen and (min-width: 40em) {
         #content .panel.blocks > .block {
-          width: 33.33333%; } }
+          width: 50%; } }
       @media screen and (min-width: 64em) {
         #content .panel.blocks > .block {
+          width: 33.33333%; } }
+      @media screen and (min-width: 75em) {
+        #content .panel.blocks > .block {
           width: 16.66667%; } }
-      #content .panel.blocks:nth-child(odd) {
-        background-color: #6F2232; }
       #content .panel.blocks .block {
-        background-color: #C3073F;
-        padding: 0.5rem; }
-        #content .panel.blocks .block h4 {
-          color: #ffffff; }
+        background-color: #ffffff;
+        padding: 1rem; }
+        #content .panel.blocks .block h4,
         #content .panel.blocks .block p {
-          color: #ffffff;
-          font-size: 0.9rem; }
-        #content .panel.blocks .block:nth-child(1n) {
-          background-color: #f61155; }
-        #content .panel.blocks .block:nth-child(2n) {
-          background-color: #a7334b; }
-        #content .panel.blocks .block:nth-child(3n) {
-          background-color: #6F2232; }
-        #content .panel.blocks .block:nth-child(4n) {
-          background-color: #C3073F; }
-        #content .panel.blocks .block:nth-child(5n) {
-          background-color: #9c0632; }
-        #content .panel.blocks .block:nth-child(6n) {
-          background-color: #591b28; }
-        #content .panel.blocks .block:nth-child(1n) {
-          background-color: #f61155; }
-        #content .panel.blocks .block:nth-child(2n) {
-          background-color: #C3073F; }
-        #content .panel.blocks .block:nth-child(3n) {
-          background-color: #9c0632; }
-        #content .panel.blocks .block:nth-child(4n) {
-          background-color: #a7334b; }
-        #content .panel.blocks .block:nth-child(5n) {
-          background-color: #6F2232; }
-        #content .panel.blocks .block:nth-child(6n) {
-          background-color: #591b28; }
+          text-align: center; }
+        #content .panel.blocks .block h4 {
+          margin-bottom: 1rem; }
+        #content .panel.blocks .block p {
+          margin: 0; }
+        #content .panel.blocks .block:nth-child(odd) {
+          background-color: #f2f1f0; }
     @media screen and (min-width: 40em) {
       #content .panel {
         padding: 2rem 2rem;

@@ -36,26 +36,7 @@ get_header();
 
 		<?php pb_recent_posts(); ?>
 
-		<div class="panel collapse blocks">
-			<div class="block">
-				<img src="http://via.placeholder.com/640x360" alt="Placeholder Image" />
-			</div>
-			<div class="block">
-				<img src="http://via.placeholder.com/640x360" alt="Placeholder Image" />
-			</div>
-			<div class="block">
-				<img src="http://via.placeholder.com/640x360" alt="Placeholder Image" />
-			</div>
-			<div class="block">
-				<img src="http://via.placeholder.com/640x360" alt="Placeholder Image" />
-			</div>
-			<div class="block">
-				<img src="http://via.placeholder.com/640x360" alt="Placeholder Image" />
-			</div>
-			<div class="block">
-				<img src="http://via.placeholder.com/640x360" alt="Placeholder Image" />
-			</div>
-		</div>
+		<?php pb_blocks(); ?>
 
 		<div class="panel">
 			<div class="main">
