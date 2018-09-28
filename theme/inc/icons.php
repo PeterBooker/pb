@@ -83,5 +83,5 @@ function pb_the_icon( $name ) {
 			break;
 	}
 
-	echo '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="' . esc_attr( $size ) . '">' . $icon . '</svg>';
+	echo '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="' . esc_attr( $size ) . '">' . $icon . '</svg>'; // WPCS: XSS ok.
 }
