@@ -27,7 +27,7 @@ get_header();
 				<div class="thumbnail">
 					<div class="post-thumbnail">
 						<a href="<?php echo esc_url( home_url( '/projects/wpdirectory/' ) ); ?>">
-							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/feature-wpdirectory.png' ); ?>" alt="Placeholder Image" />
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/feature-wpdirectory.png' ); ?>" alt="Code Editor" />
 						</a>
 					</div>
 				</div>
@@ -48,7 +48,7 @@ get_header();
 			<div class="sub">
 				<div class="thumbnail">
 					<div class="post-thumbnail">
-						<img src="http://via.placeholder.com/640x360" alt="Placeholder Image" />
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/feature-wpdirectory.png' ); ?>" alt="Code Editor" />
 					</div>
 				</div>
 			</div>
