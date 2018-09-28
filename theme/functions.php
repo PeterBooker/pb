@@ -99,6 +99,28 @@ function pb_scripts() {
 add_action( 'wp_enqueue_scripts', 'pb_scripts' );
 
 /**
+ * Add Read More link to end of excerpt.
+ *
+ * @param string $excerpt Contains the post excerpt.
+ */
+function the_excerpt_more_link( $excerpt ) {
+	global $post;
+	$excerpt .= '<a href="' . esc_url( get_permalink( $post->ID ) ) . '" title="' . esc_attr( $post->post_title ) . '">Read More</a>';
+	return $excerpt;
+}
+add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
+
+/**
+ * Prevent Excerpt More from adding links.
+ *
+ * @param string $more Contains extra to be added to excerpt.
+ */
+function new_excerpt_more( $more ) {
+	return '';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more', 21 );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
