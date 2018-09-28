@@ -13,15 +13,10 @@ if ( ! function_exists( 'pb_posted_on' ) ) :
 	 */
 	function pb_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_html( get_the_date() )
 		);
 
 		$posted_on = sprintf(
@@ -91,23 +86,6 @@ if ( ! function_exists( 'pb_entry_footer' ) ) :
 			);
 			echo '</span>';
 		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'pb' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 	}
 endif;
 
@@ -144,5 +122,53 @@ if ( ! function_exists( 'pb_post_thumbnail' ) ) :
 
 		<?php
 		endif; // End is_singular().
+	}
+endif;
+
+if ( ! function_exists( 'pb_recent_posts' ) ) :
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function pb_recent_posts() {
+		$args = array(
+			'post_type'      => 'post',
+			'post_status'    => 'publish',
+			'posts_per_page' => 3,
+		);
+
+		$query = new WP_Query( $args );
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+			?>
+			<div class="panel">
+				<?php if ( has_post_thumbnail() ) : ?>
+				<div class="sub">
+					<div class="thumbnail">
+						<?php pb_post_thumbnail(); ?>
+					</div>
+				</div>
+				<div class="main">
+					<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
+					<div class="excerpt"><?php the_excerpt(); ?></div>
+				</div>
+				<?php else : ?>
+				<div class="full">
+					<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
+					<div class="excerpt"><?php the_excerpt(); ?></div>
+				</div>
+				<?php endif; ?>
+			</div>
+			<?php
+			}
+			wp_reset_postdata();
+		} else {
+			?>
+
+			<?php
+		}
 	}
 endif;
