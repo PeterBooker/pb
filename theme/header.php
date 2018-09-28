@@ -26,7 +26,6 @@
 
 	<header id="header">
 		<div class="bar">
-			<canvas id="bar-bg"></canvas>
 			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Peter Booker">
 				<span class="p">P</span>
 				<span class="b">B</span>
