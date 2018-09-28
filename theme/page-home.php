@@ -18,7 +18,7 @@ get_header();
 
 		<div class="panel">
 			<div class="main">
-				<h2>Searching all WordPress Plugin and Theme code</h2>
+				<h2><a href="<?php echo esc_url( home_url( '/projects/wpdirectory/' ) ); ?>">Regex search of 2 million files. How hard can it be?</a></h2>
 				<p>I recently explored speeding up the process of downloading and regex searching all code in the WordPress Plugin and Theme Directories. The current methods use PHP scripts to download and extract every plugin and theme zip archive and then perform searches using tools like grep, ag, ripgrep, etc. This process could take the best part of a day.</p>
 				<p>Read about the journey, what worked, what didn't work and what I settled on.</p>
 				<a class="button" href="<?php echo esc_url( home_url( '/projects/wpdirectory/' ) ); ?>">Read More</a>
@@ -26,7 +26,9 @@ get_header();
 			<div class="sub">
 				<div class="thumbnail">
 					<div class="post-thumbnail">
-						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/feature-wpdirectory.png' ); ?>" alt="Placeholder Image" />
+						<a href="<?php echo esc_url( home_url( '/projects/wpdirectory/' ) ); ?>">
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/feature-wpdirectory.png' ); ?>" alt="Placeholder Image" />
+						</a>
 					</div>
 				</div>
 			</div>
