@@ -2048,8 +2048,8 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
       width: 0;
       height: 0;
       border-style: solid;
-      -webkit-animation-duration: 1s;
-              animation-duration: 1s; }
+      -webkit-animation-duration: 500ms;
+              animation-duration: 500ms; }
     #content .thumbnail .post-thumbnail:before {
       top: -30;
       left: -30;
@@ -2097,7 +2097,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     bottom: 0;
     right: 0; } }
 
-#content.has-post-thumbnail .title-panel {
+#content .post.has-post-thumbnail .title-panel {
   margin-bottom: 4rem; }
 
 .single #content .entry-header .thumbnail {

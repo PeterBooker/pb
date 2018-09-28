@@ -204,82 +204,80 @@
             }
         }
     }
-        .entry-header {
-            margin-bottom: rem-calc(20);
+    .entry-header {
+        margin-bottom: rem-calc(20);
+    }
+    .entry-footer {
+        .cat-links {
+            margin-right: rem-calc(20);
         }
-        .entry-footer {
-            .cat-links {
-                margin-right: rem-calc(20);
-            }
+    }
+    .thumbnail {
+        position: relative;
+        text-align: center;
+        margin-bottom: rem-calc(20);
+
+        @include breakpoint(large up) {
+            margin-bottom: rem-calc(0);
         }
 
-        .thumbnail {
+        .post-thumbnail {
             position: relative;
-            text-align: center;
-            margin-bottom: rem-calc(20);
-
-            @include breakpoint(large up) {
-                margin-bottom: rem-calc(0);
+            display: inline-block;
+            &:before,
+             &:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                animation-duration: 500ms;
+            }
+            &:before {
+                top: -30;
+                left: -30;
+                border-width: 30px 30px 0 0;
+                border-color: #ffffff transparent transparent transparent;
+                animation-name: slideinTop;
+            }
+            &:after {
+                bottom: 0;
+                right: 0;
+                border-width: 0 0 30px 30px;
+                border-color: transparent transparent #ffffff transparent;
+                animation-name: slideinBottom;
             }
 
-            .post-thumbnail {
-                position: relative;
-                display: inline-block;
-                &:before,
-                &:after {
-                    position: absolute;
-                    content: "";
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    animation-duration: 1s;
+            @keyframes slideinTop {
+                from {
+                    top: -30px;
+                    left: -30px;
                 }
-                &:before {
-                    top: -30;
-                    left: -30;
-                    border-width: 30px 30px 0 0;
-                    border-color: #ffffff transparent transparent transparent;
-                    animation-name: slideinTop;
+                  
+                to {
+                    top: 0;
+                    left: 0;
                 }
-                &:after {
+            }
+
+            @keyframes slideinBottom {
+                from {
+                    bottom: -30px;
+                    right: -30px;
+                }
+                  
+                to {
                     bottom: 0;
                     right: 0;
-                    border-width: 0 0 30px 30px;
-                    border-color: transparent transparent #ffffff transparent;
-                    animation-name: slideinBottom;
-                }
-
-                @keyframes slideinTop {
-                    from {
-                      top: -30px;
-                      left: -30px;
-                    }
-                  
-                    to {
-                      top: 0;
-                      left: 0;
-                    }
-                }
-
-                @keyframes slideinBottom {
-                    from {
-                      bottom: -30px;
-                      right: -30px;
-                    }
-                  
-                    to {
-                      bottom: 0;
-                      right: 0;
-                    }
                 }
             }
         }
-
-        &.has-post-thumbnail {
-            .title-panel {
-                margin-bottom: rem-calc(80);
-            }
+    }
+    .post.has-post-thumbnail {
+        .title-panel {
+            margin-bottom: rem-calc(80);
         }
+    }
 }
 
 
