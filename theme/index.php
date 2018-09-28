@@ -18,8 +18,8 @@ get_header();
 	<div class="panels">
 
 		<div class="title-panel">
-			<h1 class="title">Blog</h1>
-			<h4 class="sub-title">Publishing less than one quarter of what I write.</h4>
+			<h1 class="title">Articles</h1>
+			<h4 class="sub-title">Publishing less than one quarter of what I write since 2012.</h4>
 		</div>
 
 		<?php
@@ -37,8 +37,18 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-
-			the_posts_navigation();
+			?>
+			<div class="panel">
+				<div class="full">
+					<?php
+					the_posts_navigation( array(
+						'prev_text' => 'Older Posts',
+						'next_text' => 'Newer Posts',
+					));
+					?>
+				</div>
+			</div>
+			<?php
 
 		else :
 
