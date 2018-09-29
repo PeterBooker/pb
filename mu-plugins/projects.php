@@ -46,7 +46,7 @@ function pb_create_projects_cpt() {
 		'exclude_from_search' => true,
 		'publicly_queryable'  => true,
 		'show_ui'             => true,
-		'show_in_nav_menus'   => false,
+		'show_in_nav_menus'   => true,
 		'show_in_menu'        => true,
 		'show_in_rest'        => true,
 		'menu_position'       => null,
@@ -61,7 +61,7 @@ function pb_create_projects_cpt() {
 			'pages'      => false,
 			'with_front' => false,
 		),
-		'has_archive'         => false,
+		'has_archive'         => true,
 		'can_export'          => true,
 	);
 
