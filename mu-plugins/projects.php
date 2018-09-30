@@ -61,7 +61,7 @@ function pb_create_projects_cpt() {
 			'pages'      => false,
 			'with_front' => false,
 		),
-		'has_archive'         => true,
+		'has_archive'         => 'projects',
 		'can_export'          => true,
 	);
 
