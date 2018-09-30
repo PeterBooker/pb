@@ -2074,7 +2074,8 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     bottom: 0;
     right: 0; } }
 
-#content .post.has-post-thumbnail .title-panel {
+#content .post.has-post-thumbnail .title-panel,
+#content .pb_projects.has-post-thumbnail .title-panel {
   margin-bottom: 4rem; }
 
 .single #content .entry-header .thumbnail {

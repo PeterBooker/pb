@@ -236,7 +236,8 @@
             }
         }
     }
-    .post.has-post-thumbnail {
+    .post.has-post-thumbnail,
+    .pb_projects.has-post-thumbnail {
         .title-panel {
             margin-bottom: rem-calc(80);
         }
