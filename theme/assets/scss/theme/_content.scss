@@ -42,16 +42,10 @@
         @include xy-grid( 'horizontal', true );
         padding: rem-calc(30) rem-calc(20);
         background-color: #ffffff;
-        flex-direction: column-reverse;
+        flex-direction: column;
 
         &:nth-child(odd) {
             background-color: #f2f1f0;
-            .main {
-                order: 2;
-            }
-            .sub {
-                order: 1;
-            }
         }
         &.gray {
             background-color: #f2f1f0;
@@ -65,7 +59,6 @@
         }
         &.blocks {
             @include xy-grid-layout(1, '.block', false, 0, margin, right left);
-            flex-direction: row;
 
             @include breakpoint(medium up) {
                 @include xy-grid-layout(2, '.block', false, 0, margin, right left);
@@ -113,23 +106,26 @@
         .full {
             @include xy-cell( 100%, false );
             width: 100%;
+            order: 0;
         }
         .main {
             @include xy-cell( 100%, false );
             width: 100%;
+            order: 1;
 
             @include breakpoint(large up) {
                 @include xy-cell( 60% );
-                order: 1;
+                order: 0;
             }
         }
         .sub {
             @include xy-cell( 100%, false );
             width: 100%;
+            order: 0;
 
             @include breakpoint(large up) {
                 @include xy-cell( 40% );
-                order: 2;
+                order: 1;
             }
         }
 
@@ -302,4 +298,9 @@
 
 .screen-reader-text {
     @include hide-for(small);
+}
+
+.wp-block-image {
+    text-align: center;
+    margin-bottom: rem-calc(20);
 }
