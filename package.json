@@ -2,7 +2,7 @@
   "name": "pb",
   "version": "1.0.0",
   "description": "Personal Website for Peter Booker",
-  "main": "index.js",
+  "main": "pbpanel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
