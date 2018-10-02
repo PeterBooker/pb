@@ -14,7 +14,8 @@ if ( ! function_exists( 'pb_posted_on' ) ) :
 	function pb_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() )
 		);
@@ -112,11 +113,16 @@ if ( ! function_exists( 'pb_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
+			the_post_thumbnail(
+				'post-thumbnail',
+				array(
+					'alt' => the_title_attribute(
+						array(
+							'echo' => false,
+						)
+					),
+				)
+			);
 			?>
 		</a>
 
@@ -140,7 +146,7 @@ if ( ! function_exists( 'pb_recent_posts' ) ) :
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-			?>
+				?>
 			<div class="panel">
 				<?php if ( has_post_thumbnail() ) : ?>
 				<div class="sub">
@@ -159,7 +165,7 @@ if ( ! function_exists( 'pb_recent_posts' ) ) :
 				</div>
 				<?php endif; ?>
 			</div>
-			<?php
+				<?php
 			}
 			wp_reset_postdata();
 		} else {
