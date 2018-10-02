@@ -34,6 +34,6 @@ if ( ! defined( 'PBB_URL' ) ) {
 }
 
 /**
- * BLOCK: Basic Block.
+ * Block Initializer.
  */
-require_once PBB_DIR . '/blocks/class-pbpanel.php';
+require_once PBB_DIR . 'src/init.php';
