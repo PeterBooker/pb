@@ -84,4 +84,20 @@ function pb_the_icon( $name ) {
 	}
 
 	echo '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="' . esc_attr( $size ) . '">' . $icon . '</svg>'; // WPCS: XSS ok.
+
+	// Ensure attribution is displayed.
+	if ( ! has_action( 'wp_footer', 'fa_attribution' ) ) {
+		add_action( 'wp_footer', 'fa_attribution' );
+	}
+}
+
+/**
+ * FontAwesome Attribution Notice
+ */
+function fa_attribution() {
+	echo '<!--
+Font Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com
+License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+-->
+';
 }
