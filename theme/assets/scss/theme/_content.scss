@@ -53,6 +53,34 @@
         &.white {
             background-color: #ffffff;
         }
+        &.red {
+            background-color: get-color(red);
+            color: #ffffff;
+            p {
+                color: scale-color(get-color(red), $lightness: 70%);
+            }
+            a {
+                color: #ffffff;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &.darkred {
+            background-color: get-color(red-dark);
+            color: #ffffff;
+            p {
+                color: scale-color(get-color(red-dark), $lightness: 70%);
+            }
+            a {
+                color: #ffffff;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
         &.collapse {
             margin: 0;
             padding: 0;
@@ -71,20 +99,33 @@
             }
             .block {
                 background-color: #ffffff;
+                background-color: get-color(red);
                 padding: rem-calc(20);
                 h4,
                 p {
                     text-align: center;
+                }
+                a {
+                    color: #ffffff;
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                    }
                 }
                 h4 {
                     margin-bottom: rem-calc(20);
                 }
                 p {
                     margin: 0;
+                    color: scale-color(get-color(red), $lightness: 70%);
                 }
 
                 &:nth-child(odd) {
                     background-color: #f2f1f0;
+                    background-color: get-color(red-dark);
+                    p {
+                        color: scale-color(get-color(red-dark), $lightness: 70%);
+                    }
                 }
             }
         }
@@ -304,4 +345,21 @@
 .wp-block-image {
     text-align: center;
     margin-bottom: rem-calc(20);
+}
+
+.tools {
+    margin-bottom: rem-calc(20);
+
+    .label-list {
+        margin-bottom: rem-calc(20);
+        text-align: center;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(medium up) {
+            text-align: left;
+        }
+    }
 }
