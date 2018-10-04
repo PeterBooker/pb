@@ -2208,3 +2208,6 @@ html.noscroll {
 a {
   -webkit-transition: color 150ms ease-in-out;
   transition: color 150ms ease-in-out; }
+
+#content .container {
+  width: 100%; }

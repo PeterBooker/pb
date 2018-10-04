@@ -25,3 +25,9 @@ html {
 a {
     transition: color 150ms ease-in-out;
 }
+
+#content {
+    .container {
+        width: 100%;
+    }
+}
