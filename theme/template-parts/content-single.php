@@ -23,29 +23,35 @@
 		</header>
 	</div>
 
-	<?php
-	the_content(
-		sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'pb' ),
-				array(
-					'span' => array(
-						'class' => array(),
+	<div class="panel">
+		<div class="container">
+			<div class="full">
+			<?php
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'pb' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
 					),
+					get_the_title()
 				)
-			),
-			get_the_title()
-		)
-	);
+			);
 
-	wp_link_pages(
-		array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'pb' ),
-			'after'  => '</div>',
-		)
-	);
-	?>
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'pb' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
+			</div>
+		</div>
+	</div>
 
 	<div class="panel">
 		<div class="container">
