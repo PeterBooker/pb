@@ -36,4 +36,4 @@ if ( ! defined( 'PBB_URL' ) ) {
 /**
  * Block Initializer.
  */
-require_once PBB_DIR . 'src/init.php';
+require_once PBB_DIR . '/src/init.php';
