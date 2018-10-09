@@ -16,6 +16,12 @@
 
 .pbpanel {}
 
+[data-type="pb/panel"] {
+    border: 1px dashed #999999;
+    padding: 10px;
+    overflow: hidden;
+}
+
 [data-type="pb/full"],
 [data-type="pb/main"],
 [data-type="pb/sub"] {
