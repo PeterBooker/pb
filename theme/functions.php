@@ -93,7 +93,7 @@ add_action( 'widgets_init', 'pb_widgets_init' );
  * Enqueue scripts and styles.
  */
 function pb_scripts() {
-	wp_enqueue_style( 'pb-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'pb-style', get_stylesheet_uri(), array(), PB_VERSION );
 	wp_enqueue_script( 'pb-script', get_template_directory_uri() . '/assets/js/theme.js', array( 'jquery' ), PB_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'pb_scripts' );
@@ -139,3 +139,19 @@ require get_template_directory() . '/inc/icons.php';
  * Functions which disable comments.
  */
 require get_template_directory() . '/inc/disable-comments.php';
+
+/**
+ * Death to Emojii
+ */
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+/**
+ * Death to Embeds
+ */
+remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+add_filter( 'embed_oembed_discover', '__return_false' );
+remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
