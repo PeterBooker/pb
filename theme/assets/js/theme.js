@@ -1,4 +1,4 @@
-jQuery( document ).ready( function( $ ) {
+document.addEventListener( 'DOMContentLoaded', function() { 
     var burger = document.getElementById( 'burger' );
     var header = document.getElementById( 'header' );
     var page = document.documentElement;
@@ -6,5 +6,4 @@ jQuery( document ).ready( function( $ ) {
         header.classList.toggle( 'active' );
         page.classList.toggle( 'noscroll' );
     });
-    //$(document).foundation();
-});
+}, false);
