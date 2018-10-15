@@ -95,6 +95,11 @@ add_action( 'widgets_init', 'pb_widgets_init' );
 function pb_scripts() {
 	wp_enqueue_style( 'pb-style', get_stylesheet_uri(), array(), PB_VERSION );
 	wp_enqueue_script( 'pb-script', get_template_directory_uri() . '/assets/js/theme.js', array(), PB_VERSION, true );
+
+	if ( is_post( 'dotadata' ) ) {
+		wp_enqueue_style( 'dd-style', get_template_directory_uri() . '/assets/js/ddtips.latest.css', array(), PB_VERSION );
+		wp_enqueue_script( 'dd-script', get_template_directory_uri() . '/assets/js/ddtips.latest.js', array(), PB_VERSION, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'pb_scripts' );
 
