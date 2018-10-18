@@ -164,4 +164,7 @@ remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
 /**
  * Gutenberg
  */
-wp_dequeue_style( 'wp-block-library' );
+function dequeue_assets() {
+	wp_dequeue_style( 'wp-block-library' );
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_assets', 99 );
