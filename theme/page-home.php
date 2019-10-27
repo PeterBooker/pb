@@ -35,15 +35,10 @@ get_header();
 		</div>
 
 		<div class="panel darkred">
-			<div class="main">
+			<div class="full">
 				<h3>Job Opportunities</h3>
 				<p>Looking for work focused on WordPress and/or the Go language. Experience creating, scaling and maintaing user-friendly customisations/integrations for WordPress. Excellent track record on working with and supporting customers through all mediums. Broad experience with Go from REST APIs, CLI Tools all the way to visual displays.</p>
 				<p>If you have something you think I would be a good fit for send me an <a href="mailto: <?php echo esc_attr( antispambot( 'mail@peterbooker.com' ) ); ?>" title="Email">email</a>.</p>
-			</div>
-			<div class="sub">
-				<h3>Current Focus</h3>
-				<p>I am working my way through Computer Science degree material online to expand my knowledge of algorithms and patterns. This has paid off by helping me to better specify problems, improving my ability to troubleshoot and solve them.</p>
-				<p>My current focus is on learning to use the Qt framework for creating cross-platform desktop applications in Go and improving my workflow with CI/CD through testing and Travis.</p>
 			</div>
 		</div>
 
